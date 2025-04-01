@@ -85,6 +85,12 @@ const ReviewCard = ({
 }
 
 export default function HomePage() {
+
+  const sendMessage = () => {
+    const message = "Hola, estoy interesado en el libro Sombras de la Mente. ¿Podrías darme más información?";
+    window.open(`https://wa.me/+51923114848?text=${encodeURIComponent(message)}`, '_blank');
+  }
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
@@ -113,7 +119,9 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
-            <Button size="lg" className="bg-red-900 hover:bg-red-800">
+            <Button
+            onClick={ sendMessage }
+            size="lg" className="bg-red-900 hover:bg-red-800">
               Obtener Libro <ChevronRight className="ml-2 h-4 w-4" />
             </Button>
             <Button
@@ -254,7 +262,9 @@ export default function HomePage() {
               oscura y sus aplicaciones.
             </p>
 
-            <Button size="lg" className="bg-red-900 hover:bg-red-800 px-8">
+            <Button
+            onClick={ sendMessage }
+            size="lg" className="bg-red-900 hover:bg-red-800 px-8">
               Obtener Libro Ahora
             </Button>
 
